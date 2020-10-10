@@ -76,24 +76,6 @@
                     </b-button>
                   </p>
                 </b-field>
-                <b-field class="has-text-centered" label="ルームIDを入力して参加する" label-positional="on-border">
-                  <b-input
-                    v-model="roomID"
-                    expanded
-                    placeholder="ルームID (4桁)"
-                    type="number"
-                    min="0000"
-                    max="9999"
-                  />
-                  <p class="control">
-                    <b-button
-                      class="button is-primary"
-                      @click="startMethod=3"
-                    >
-                      参加
-                    </b-button>
-                  </p>
-                </b-field>
               </div>
               <div v-if="startMethod != -1 && !isLogined" class="tile is-child box">
                 <p class="title">
@@ -112,6 +94,9 @@
                 </p>
               </div>
               <div v-if="isLogined" class="tile is-child box">
+                <p class="title">
+                  プレイヤー待機中
+                </p>
                 <p class="subtitle has-text-centered">
                   ルームID: {{ roomID }}
                 </p>
